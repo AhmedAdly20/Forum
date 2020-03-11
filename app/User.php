@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\SocialAccount;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use App\Discussion;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -42,6 +43,11 @@ class User extends Authenticatable implements JWTSubject
     public function accounts()
     {
         return $this->hasMany(SocialAccount::class);
+    }
+
+    public function discussions()
+    {
+        return $this->hasMany(Discussion::class);
     }
 
     public function getJWTIdentifier()

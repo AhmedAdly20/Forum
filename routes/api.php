@@ -36,4 +36,5 @@ Route::group(["prefix" => "v1", "namespace" => "API"], function($router) {
         Route::get("user", "AuthController@user");
     });
     Route::apiResource("channels", "ChannelController");
+    Route::apiResource("discussions", "DiscussionController");
 });
